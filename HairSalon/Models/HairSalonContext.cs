@@ -1,4 +1,5 @@
 using Microsoft.EntityFrameworkCore;
+using System.Linq;
 
 namespace HairSalon.Models
 {
@@ -8,5 +9,10 @@ namespace HairSalon.Models
     public DbSet<Client> Clients { get; set; }
 
     public HairSalonContext(DbContextOptions options) : base(options) { }
+
+    public int GetStylistCount()
+    {
+        return Stylists.Count();
+    }
   }
 }

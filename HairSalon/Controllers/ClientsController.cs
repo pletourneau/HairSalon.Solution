@@ -26,6 +26,10 @@ namespace HairSalon.Controllers
 
     public ActionResult Create()
     {
+      int stylistCount = _db.GetStylistCount();
+
+      // ViewBag.StylistCount = stylistCount;
+
       ViewBag.StylistId = new SelectList(_db.Stylists, "StylistId", "Name");
       return View();
     }
