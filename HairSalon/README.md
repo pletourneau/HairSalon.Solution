@@ -29,14 +29,22 @@ Follow the instructions in the LearnHowToProgram.com lesson ["Creating a Test Da
 1. Clone this repository from GitHub and open project in a code editor. 
 2. Open your shell (e.g., Terminal or GitBash) and navigate to this project's production directory called "HairSalon". 
 3. Within the production directory "HairSalon", create a new file called `appsettings.json`. 
-4. Within `appsettings.json`, put in the following code, replacing the `uid` and `pwd` values with your own username and password for MySQL. For the LearnHowToProgram.com lessons, we always assume the `uid` is `root` and the `pwd` is `epicodus`.
+4. Within the production directory "HairSalon", create a new file called `.gitignore` and add the following code before saving the file.
+```
+obj
+bin
+appsettings.json
+``` 
+4. Within `appsettings.json`, put in the following code, replacing the `uid` and `pwd` values with your own username and password for MySQL. 
 ```json
 {
   "ConnectionStrings": {
-      "DefaultConnection": "Server=localhost;Port=3306;database=paul_letourneau;uid=root;pwd=epicodus;"
+      "DefaultConnection": "Server=localhost;Port=3306;database=paul_letourneau;uid=[user-id];pwd=[password];"
   }
 }
 ```
+    * Replace [user-id] with your SQL username
+    * Replace [password] with your SQL password 
 5. Within the production directory "HairSalon", run `dotnet watch run` in the command line to start the project in development mode with a watcher.
 6. Open the browser to _https://localhost:5001_. If you cannot access localhost:5001 it is likely because you have not configured a .NET developer security certificate for HTTPS. To learn about this, review this lesson: [Redirecting to HTTPS and Issuing a Security Certificate](https://www.learnhowtoprogram.com/c-and-net/basic-web-applications/redirecting-to-https-and-issuing-a-security-certificate).
 
