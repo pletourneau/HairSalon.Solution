@@ -21,8 +21,6 @@ This is a web application that uses a mySQL database to keep track of stylists a
 ### Install Tools
 Install the tools that are introduced in this series of lessons on [LearnHowToProgram.com](https://www.learnhowtoprogram.com/c-and-net/getting-started-with-c).
 
-### Set up the Databases
-Follow the instructions in the LearnHowToProgram.com lesson ["Creating a Test Database: Exporting and Importing Databases with MySQL Workbench"](https://www.learnhowtoprogram.com/c-and-net/database-basics/creating-a-test-database-exporting-and-importing-databases-with-mysql-workbench) to use the `paul_letourneau.sql` file located at the top level of this repo to create a new database in MySQL Workbench with the name `paul_letourneau`.
 
 ### Set up and Run Project
 
@@ -47,6 +45,21 @@ appsettings.json
     * Replace [password] with your SQL password 
 5. Within the production directory "HairSalon", run `dotnet watch run` in the command line to start the project in development mode with a watcher.
 6. Open the browser to _https://localhost:5001_. If you cannot access localhost:5001 it is likely because you have not configured a .NET developer security certificate for HTTPS. To learn about this, review this lesson: [Redirecting to HTTPS and Issuing a Security Certificate](https://www.learnhowtoprogram.com/c-and-net/basic-web-applications/redirecting-to-https-and-issuing-a-security-certificate).
+
+### Set up the Databases
+Follow the instructions in the LearnHowToProgram.com lesson ["Creating a Test Database: Exporting and Importing Databases with MySQL Workbench"](https://www.learnhowtoprogram.com/c-and-net/database-basics/creating-a-test-database-exporting-and-importing-databases-with-mysql-workbench)
+
+To use the `paul_letourneau.sql` file located at the top level of this repo to create a new database in MySQL Workbench with the name `paul_letourneau`. 
+
+To import the `paul_letourneau.sql` file into MySQL Workbench:
+1. Navigate to the `Administration` tab in MySQL
+2. Select `Data Import/Restore`
+3. Select the radio button for `Import from Self-Contained File`
+4. Navigate to `paul_letourneau.sql` which is located in the top directory of the cloned project by entering in the path, or by selecting the `..` on the far right of the screen and navigating to the path
+5. Select `New...` in the `Default Target Schema` line and enter in `paul_letourneau`
+6. Click the dropdown list near the bottom of the page and change value to `Dump Structure Only`
+7. In the bottom right of the page click `Start Import`
+8. Navigate back to the `Schemas` tab and hit the refresh button (which looks like two arrows; one pointing up, and one pointing down). The database will now show!
 
 ## Known Bugs
 
